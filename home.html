@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Personal Website</h1>
+        
+    </header>
+    <section id="about">
+        <div class="navigation-container">
+            <div class="navigation-buttons">
+                <a href="#about" class="nav-button">About Me</a>
+                <a href="#skills" class="nav-button">Skills</a>
+                <a href="#dashboard_page" class="nav-button">Projects</a>
+                <a href="#contact" class="nav-button">Contacts</a>
+            </div>
+            <div class="profile-picture">
+                <img src="Screenshot 2024-11-15 213433.png" alt="Your Profile Picture">
+            </div>
+        </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <h3>I am <span id="dynamic-text" style="color: steelblue;"></span></h3>
+        <p>
+            I am Ofentse Mathosi, an aspiring Doftware Developer. My journey into the world of technology began with a deep curiosity about how systems work and a desire to create innovative solutions to everyday challenges.
+
+            As a first-year student at the University of Johannesburg, pursuing a degree in Information Systems,This field combines my love for systems thinking and software development, and it’s paving the way for me to grow as an aspiring software developer or engineer. I am building the skills and knowledge needed to thrive in the ever-evolving tech industry. My ultimate goal is to become a software developer who not only creates efficient and impactful solutions but also inspires others to embrace technology as a tool for positive change.
+
+            I envision myself working on groundbreaking projects that solve real-world problems, streamline processes, and improve lives. Whether it’s developing user-friendly applications, designing systems that foster collaboration, or contributing to advancements in artificial intelligence, I am committed to continuous learning and growth.
+
+            Through hard work, dedication, and a passion for innovation, I aim to leave a lasting mark in the tech world.
+            My journey reflects resilience, curiosity, and a drive to make a meaningful impact in the tech world
+        </p>
+    </section>
+        
+
+    <section  id="skills">
+        <h2>Programmin Skills</h2>
+        <ul class="skillsContainer"> 
+            
+            <li class=" ButtonBox">
+				<a>
+					<i></i>
+            <!-- Add more skills as needed         
+					<span class="text">Python</span>
+				</a>
+			</li>
+            <li class="ButtonBox">
+				<a href="#">
+					<i></i>
+					<span class="text">C#</span>
+				</a>
+			</li>
+            <li class="ButtonBox">
+                <a href="#">
+                <span class="test">Object Oriented Programing (OOP) </span>
+            <li class="ButtonBox">
+                <a href="#">
+                <span class="test">HTML</span>
+            <li class="Pythonbox">
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Microsoft office apps</span> -->
+
+                    
+                    <div class="programming-skills section hidden">
+                        <span class="btn1 btn-primary1">
+                            <span><img src="html-5.png" class="techSize"></span>
+                            <p>HTML5</p>
+                        </span>
+                        <span class="btn1 btn-primary1">
+                            <span><img src="css3.png" class="techSize"></span>
+                            <p>CSS3</p>
+                        </span>
+                        <span class="btn1 btn-primary1">
+                            <span><img src="javascript.png" class="techSize"></span>
+                            <p>javaScript</p>
+                        </span>
+                        <span class="btn1 btn-primary1">
+                            <span><img src="python.png" class="techSize"></span>
+                            <p>Python</p>
+                        </span>
+                        <span class="btn1 btn-primary1">
+                            <span><img src="c sharp.png" class="techSize"></span>
+                            <p>C#</p>
+                        </span>
+                    </div>
+				</a>
+                
+			</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </section>
+    <section id="skills">
+        <h2>Core Skills</h2>
+        <ul id="core-skills-list">
+            <li>Object Oriented Programing (OOP)</li>
+            <li>Microsoft Office Tools (Excel, Word, Access, PowerPoint)</li>
+            <li>Microsoft Exel VBA</li>
+            <li>Problem Solving and Analytical Thinking</li>
+            <li>Project Management and Collaboration</li>
+            <li>Time Management and Organization</li>
+            <li>Effective Communication and Teamwork</li>
+            <li>Data Analysis and Reporting</li>
+        </ul>
+    </section>
+    <section id="skills">
+        <h2>Projects</h2>
+        <div id="dashboard_page">
+            <div class="project">
+                <button class="project-button" onclick="showProjectInfo('project1')">Web Debelopment</button>
+                <div class="project-info hidden" id="project1">
+                    <p>This project will be updated soon...</p>
+                    <a href="project1.pdf" target="_blank">View PDF</a>
+                </div>
+            </div>
+            <div class="project">
+                <button class="project-button" onclick="showProjectInfo('project2')">C# Graphic User Interface(GUI).</button>
+                <div class="project-info hidden" id="project2">
+                    <p>This project will be updated soon...</p>
+                    <a href="project2.pdf" target="_blank">View PDF</a>
+                </div>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+     <script>
+        function showProjectInfo(projectId) {
+            const projectInfo = document.getElementById(projectId);
+
+            if (projectInfo.classList.contains('hidden')) {
+                projectInfo.classList.remove('hidden');
+                projectInfo.style.display = 'block'; // Show a comprehensive web development fracontent
+            } else {
+                projectInfo.classList.add('hidden');
+                projectInfo.style.display = 'none'; // Hide content
+            }
+        }
+    </script>
+    <section id="contact">
+        <h2>My Contacts</h2>
+        <p>Cell Phone number: 0646660240</p>
+        <p>Email: <a href="mailto:Mrmathosi.ofentse@gmail.com">Mrmathosi.ofentse@gmail.com</a></p>
+
+        <!-- Social Media Icons -->
+        <div class="social-links">
+            <a href="https://wa.me/0646660240" target="_blank" title="WhatsApp">
+                <img src="WhatsApp_icon.png" alt="WhatsApp" class="social-icon">
+            </a>
+            <a href="https://www.facebook.com/yourprofile" target="_blank" title="Facebook">
+                <img src="Facebook_Logo_2023.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="linkedin-logo-linkedin-icon-transparent-free-png.webp" target="_blank" title="LinkedIn">
+                <img src="Linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank" title="Instagram">
+                <img src="instagram-icon-rectangle-magenta.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+                <img src="Github.png" alt="GitHub" class="social-icon">
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ofentse Mathosi. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

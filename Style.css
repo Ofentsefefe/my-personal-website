@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #1e1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: hsl(229, 80%, 70%);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+.navigation-container{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+/* Styling for Navigation Buttons */
+.navigation-buttons {
+    text-align: left; /* Centers the buttons */
+    margin-top: 20px; /* Space below the welcome message */
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.nav-button {
+    display: flex; /* Makes buttons appear side by side */
+    width: 100px;
+    padding: 10px 20px; /* Button size */
+    margin: 10px; /* Space between buttons */
+    background-color: rgb(121, 125, 248); /* Button color */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline */
+    border-radius: 6px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Makes text bold */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effects */
+}
+
+.nav-button:hover {
+    background-color: deepskyblue; /* Changes color on hover */
+    transform: scale(1.1); /* Enlarges button on hover */
+}
+
+.nav-button:active {
+    background-color: dodgerblue; /* Color when pressed */
+    transform: scale(1); /* Resets size when pressed */
+}
+/* Profile Picture*/
+.profile-picture {
+    text-align: center;
+    margin-bottom: 100px;
+    margin-left: 250px;
+}
+.profile-picture img {
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    border-radius: 100%; /* Makes the image circular */
+    border: 2px solid #00c8ff; /* Adds a border around the image */
+}
+/* Section styles */
+section {
+    padding: 20px;
+    text-align: center;
+    text-decoration-style: none;
+    color: #16172a;
+}
+#skills h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #3958d6;
+    
+}
+
+.programming-skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
+    gap: 15px; /* Adds spacing between skill items */
+    padding: 20px 0;
+}
+
+.programming-skills .btn1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.programming-skills img.techSize {
+    width: 80px; /* Adjust the size of the icons */
+    height: auto;
+    border-radius: 5px; /* Optional: add rounded corners */
+    margin-bottom: 5px;
+}
+
+.programming-skills p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+/* Core Skills Section */
+#core-skills-list {
+    list-style-type: disc ; /* Adds bullets */
+    padding-left: 20px; /* Indents the list for better readability */
+    text-align: center; /* Aligns the text to the left */
+}
+
+
+#core-skills-list li {
+    margin: 10px 0; /* Adds space between each skill */
+    font-size: 16px; /* Adjust font size */
+    color: #6094ef; /* Makes the text dark for readability */
+    list-style-position: inside; /* Moves bullets closer to the text */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* Projects Section */
+
+.project {
+    margin-bottom: 20px; /* Space between projects */
+}
+
+.project-button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: steelblue;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.project-button:hover {
+    background-color: deepskyblue;
+    transform: scale(1.1);
+    
+}
+
+.project-info {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.project-info.hidden {
+    display: none;
+}
+
+.project-info a {
+    color: steelblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-info a:hover {
+    text-decoration: underline;
+}
+/* Apply flexbox to the section containing the projects */
+#dashboard_page {
+    display: flex;
+    justify-content: center;  /* Horizontally center the items */
+    align-items: center;      /* Vertically center the items */
+    flex-direction: column;   /* Stack the items vertically */
+    gap: 3px;                /* Add some space between the projects */
+    min-height: 10vh;        /* Ensure the section takes up full viewport height */
+}
+#dynamic-text {
+    border-right: 2px solid steelblue; /* Adds a blinking cursor effect */
+    padding-right: 5px;
+    animation: blink 0.7s steps(1) infinite;
+    font: bold;
+    forced-color-adjust: black;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d9e3fb;
+}
+/* Social Media Links */
+.social-links {
+    margin-top: 20px; /* Space above the icons */
+    text-align: center; /* Center the icons */
+}
+
+.social-links a {
+    margin: 0 10px; /* Space between each icon */
+    display: inline-block; /* Keeps icons in a row */
+}
+
+.social-icon {
+    width: 40px; /* Adjust the size of the icons */
+    height: 40px; /* Ensures consistent size */
+    border-radius: 200%; /* Optional: makes icons circular */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.3); /* Slightly enlarges icon on hover */
+}
+footer {
+    background: hsl(229, 80%, 70%);
+    color: #fff;
+    text-align: center;
+    padding: 2px 0;
+    margin-top: 5px;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    max-width: 1200px; /* Maximum width */
+    max-height: 800px; /* Maximum height */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto; /* Center the content */
+    background-color: lightcoral;
+    overflow: auto;  /* If content overflows, scrollbars appear */
+}
+
+
