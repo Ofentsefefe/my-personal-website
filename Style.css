@@ -187,11 +187,11 @@ nav ul {
     min-height: 10vh;        /* Ensure the section takes up full viewport height */
 }
 #dynamic-text {
-    border-right: 2px solid steelblue; /* Adds a blinking cursor effect */
+    border-right: 2px solid steelblue;
     padding-right: 5px;
-    animation: blink 0.7s steps(1) infinite;
-    font: bold;
-    forced-color-adjust: black;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
 }
 
 @keyframes blink {
@@ -236,6 +236,7 @@ footer {
     padding: 2px 0;
     margin-top: 5px;
 }
+
 html, body {
     margin: 0;
     padding: 0;
@@ -251,6 +252,7 @@ html, body {
     background-color: lightcoral;
     overflow: auto;  /* If content overflows, scrollbars appear */
 }
+
 .project-images {
     display: flex;
     gap: 10px;
@@ -262,6 +264,26 @@ html, body {
     height: 50%;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* Media queries for larger screens */
+@media (max-width: 426px) {
+    body {
+        margin: 0 auto;
+        
+    }
+
+    nav ul {
+        justify-content: flex-start;
+    }
+
+    main {
+        display: flex;
+        gap: 2em;
+    }
+
+    section {
+        flex: 1;
+    }
 }
 /* General Styles */
 body {
@@ -504,5 +526,3 @@ footer {
         align-items: center;
     }
 }
-
-
