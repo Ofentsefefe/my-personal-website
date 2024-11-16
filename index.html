@@ -6,11 +6,56 @@
     <title>My Personal Website</title>
     <link rel="stylesheet" href="Style.css">
 </head>
+<script>
+    const sentences = [
+        "a Software Developer.",
+        "a System Analyst.",
+        "an Aspiring Engineer.",
+        "a Problem Solver."
+    ];
+    const dynamicText = document.getElementById("dynamic-text");
+
+    let currentSentenceIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100; // Speed in ms
+
+    function typeAnimation() {
+        const currentSentence = sentences[currentSentenceIndex];
+        if (isDeleting) {
+            // Remove characters
+            dynamicText.textContent = currentSentence.substring(0, currentCharIndex--);
+        } else {
+            // Add characters
+            dynamicText.textContent = currentSentence.substring(0, currentCharIndex++);
+        }
+
+        // Adjust speed at the end of typing
+        if (!isDeleting && currentCharIndex === currentSentence.length) {
+            // Pause before deleting
+            setTimeout(() => (isDeleting = true), 1000);
+        } else if (isDeleting && currentCharIndex === 0) {
+            // Move to the next sentence
+            isDeleting = false;
+            currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
+        }
+
+        // Continue the typing loop
+        setTimeout(typeAnimation, isDeleting ? 50 : typingSpeed);
+    }
+
+    // Start the animation
+    typeAnimation();
+
+</script>
 <body>
     <header>
         <h1>Welcome to My Personal Website</h1>
-        
     </header>
+    <div>
+        <h1 id="blinking-text">Ofentse Mathosi</h1>
+        <script src="script.js"></script>
+    </div>
     <section id="about">
         <div class="navigation-container">
             <div class="navigation-buttons">
@@ -23,7 +68,7 @@
                 <img src="Screenshot 2024-11-15 213433.png" alt="Your Profile Picture">
             </div>
         </div>
-    <section id="about">
+        <section id="about">
             <h2>About Me</h2>
             <h3>I am <span id="dynamic-text" style="color: steelblue;"></span></h3>
             <p>
@@ -36,13 +81,12 @@
                 I envision myself working on groundbreaking projects that solve real-world problems, streamline processes, and improve lives. Whether it’s developing user-friendly applications, designing systems that foster collaboration, or contributing to advancements in artificial intelligence, I am committed to continuous learning and growth. Through hard work, dedication, and a passion for innovation, I aim to leave a lasting mark in the tech world. My journey reflects resilience, curiosity, and a drive to make a meaningful impact in the tech world.
             </p>
         </section>
-        
-    
     <section  id="skills">
         <h2>Programmin Skills</h2>
         <ul class="skillsContainer"> 
             
             <li class=" ButtonBox">
+         
                     <div class="programming-skills section hidden">
                         <span class="btn1 btn-primary1">
                             <span><img src="html-5.png" class="techSize"></span>
@@ -65,22 +109,19 @@
                             <p>C#</p>
                         </span>
                     </div>
-		
         </ul>
     </section>
     <section id="skills">
         <h2>Core Skills</h2>
         <ul id="core-skills-list">
             <li>Object Oriented Programing (OOP)</li>
-	    <li>Graphic User Interface Development</li>
-	    <li>System analysis and Development </li>
             <li>Microsoft Office Tools (Excel, Word, Access, PowerPoint)</li>
             <li>Microsoft Exel VBA</li>
             <li>Problem Solving and Analytical Thinking</li>
             <li>Project Management and Collaboration</li>
             <li>Time Management and Organization</li>
             <li>Effective Communication and Teamwork</li>
-            
+            <li>Data Analysis and Reporting</li>
         </ul>
     </section>
     <section id="skills">
@@ -146,22 +187,22 @@
             <a href="https://wa.me/0646660240" target="_blank" title="WhatsApp">
                 <img src="WhatsApp_icon.png" alt="WhatsApp" class="social-icon">
             </a>
-            <a href="https://www.facebook.com/profile.php?id=100023428624253&ref=xav_ig_profile_web" target="_blank" title="Facebook">
+            <a href = "https://www.facebook.com/profile.php?id=100023428624253&ref=xav_ig_profile_web" target="_blank" title= "facebook">
                 <img src="Facebook_Logo_2023.png" alt="Facebook" class="social-icon">
             </a>
             <a href="linkedin-logo-linkedin-icon-transparent-free-png.webp" target="_blank" title="LinkedIn">
                 <img src="Linkedin.png" alt="LinkedIn" class="social-icon">
             </a>
-            <a href=https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmanqobaw_fefe10%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR0b9knwt85xS5vWpmOBcPlu85ZmXPayZWVUdsnXHQ0fg4A2IbaN5jgiwb4_aem_DvK_mxy74bJjezZc3j0dyA&h=AT3nEikUWv2NVNXwOB7Jldo2dYwWUSVZRESaUBLhgs2R-I2NXCeMggeapfOczwAeF1YXhR8IrnPevnm1_JPgymhXOPM3MkcMxoX09wLefcbLw-4nTaHgfF7KILGHD4Q5UNVa" target="_blank" title="Instagram">
+            <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmanqobaw_fefe10%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR1w7uTSK1uSqi5BkVYICH6anWvf75knlKWStdjtJiVJ1jZzJdBr89CA9XE_aem__aEqJvG8MS9PeGWw1SrMgA&h=AT3IthKbGaoTuyta6PEF7SWo7pLJXIdNDrdmBgaR1Ne1tMWWQr8Co4KYExVwLfRtFuUKyd-xWg2Kf9r4XAI5Ztpg87xABE6YXtG-iAtoghDlUm8-BFJmMJLGWAgheZ-GtY5I" target="_blank" title="Instagram">
                 <img src="instagram-icon-rectangle-magenta.png" alt="Instagram" class="social-icon">
             </a>
-            <a href="https://github.com/Ofentsefefe" target="_blank" title="GitHub">
+            <a href="https://github.com/yourusername" target="_blank" title="GitHub">
                 <img src="Github.png" alt="GitHub" class="social-icon">
             </a>
         </div>
     </section>
 
-    <footer>
+    <footer style="text-align: center; padding: 10px;">
         <p>&copy; 2024 Ofentse Mathosi. All Rights Reserved.</p>
     </footer>
 
