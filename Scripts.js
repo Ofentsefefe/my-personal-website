@@ -49,30 +49,27 @@ document.addEventListener("DOMContentLoaded", () => {
     let charIndex = 0;
     let isDeleting = false;
 
-    const typingSpeed = 150; // Speed of typing in ms
-    const deletingSpeed = 100; // Speed of deleting in ms
-    const delayBetweenSentences = 1500; // Pause after a sentence is typed out
+    const typingSpeed = 150;
+    const deletingSpeed = 100;
+    const delayBetweenSentences = 1500;
 
     function typeSentence() {
         const currentSentence = sentences[sentenceIndex];
-        const displayText = currentSentence.substring(0, charIndex);
 
-        dynamicTextElement.textContent = displayText;
-
-        if (!isDeleting) {
-            charIndex++;
-        } else {
+        if (isDeleting) {
             charIndex--;
+            dynamicTextElement.textContent = currentSentence.substring(0, charIndex);
+        } else {
+            charIndex++;
+            dynamicTextElement.textContent = currentSentence.substring(0, charIndex);
         }
 
         let speed = isDeleting ? deletingSpeed : typingSpeed;
 
         if (!isDeleting && charIndex === currentSentence.length) {
-            // Wait before starting to delete
             speed = delayBetweenSentences;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
-            // Move to the next sentence
             isDeleting = false;
             sentenceIndex = (sentenceIndex + 1) % sentences.length;
         }
