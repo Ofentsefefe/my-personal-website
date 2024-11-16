@@ -546,12 +546,12 @@ footer {
     }
 }
 
-/* Blinking effect after 5 seconds */
+/* Blinking effect after 3 seconds */
 @keyframes blinkEffect {
-    0%, 50% {
+    0%, 30% {
         opacity: 1; /* Fully visible for the first 5 seconds */
     }
-    55%, 100% {
-        opacity: 0; /* Invisible for 5 seconds */
+    60%, 65% {
+        opacity: 0; /* Invisible for 1 and second */
     }
 }
