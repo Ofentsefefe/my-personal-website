@@ -526,3 +526,35 @@ footer {
         align-items: center;
     }
 }
+/* General body styling */
+
+
+/* Styling for the blinking text */
+#blinking-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #7a96f0; /* A deep blue */
+    
+    text-align: center;
+    animation: attentionGrabber 5s linear infinite, blinkEffect 10s ease-in-out infinite;
+}
+
+/* Animation for subtle scaling and pulsing */
+@keyframes attentionGrabber {
+    0%, 100% {
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(1.2); /* Slightly larger */
+    }
+}
+
+/* Blinking effect after 5 seconds */
+@keyframes blinkEffect {
+    0%, 50% {
+        opacity: 1; /* Fully visible for the first 5 seconds */
+    }
+    55%, 100% {
+        opacity: 0; /* Invisible for 5 seconds */
+    }
+}
