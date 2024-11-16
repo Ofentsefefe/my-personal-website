@@ -17,7 +17,10 @@ header {
     flex-direction: row;
 }
 #about p {
+    text-align: justify; /* Aligns the text evenly across the width */
+
     margin-bottom: 1em; /* Adds space between paragraphs */
+}
 /* Styling for Navigation Buttons */
 .navigation-buttons {
     text-align: left; /* Centers the buttons */
@@ -68,7 +71,7 @@ section {
     padding: 20px;
     text-align: center;
     text-decoration-style: none;
-    color: #16172a;
+    color: #5e63c5;
 }
 #skills h2 {
     margin-bottom: 20px;
@@ -105,7 +108,6 @@ section {
     font-size: 14px;
     color: #333;
 }
-
 /* Core Skills Section */
 #core-skills-list {
     list-style-type: disc ; /* Adds bullets */
@@ -249,5 +251,4 @@ html, body {
     background-color: lightcoral;
     overflow: auto;  /* If content overflows, scrollbars appear */
 }
-
 
