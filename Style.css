@@ -64,7 +64,7 @@ html {
     width: 300px; /* Adjust width as needed */
     height: 300px; /* Adjust height as needed */
     border-radius: 100%; /* Makes the image circular */
-    border: 2px solid #00c8ff; /* Adds a border around the image */
+    border: 1px solid #00c8ff; /* Adds a border around the image */
 }
 /* Section styles */
 section {
