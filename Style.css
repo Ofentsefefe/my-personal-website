@@ -302,7 +302,12 @@ header {
     padding: 10px 0;
     text-align: center;
 }
-
+footer {
+    background: hsl(229, 80%, 70%);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}    
 /* Navigation Container */
 .navigation-container {
     display: flex;
