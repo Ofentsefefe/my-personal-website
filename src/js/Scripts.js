@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+  
+  console.log("Script loaded!"); 
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOM fully loaded");
+  
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('header ul');
+  
+  if (!toggle) console.error("Toggle button not found!");
+  if (!menu) console.error("Menu not found!");
+  
+  toggle?.addEventListener('click', function() {
+    console.log("Menu clicked!");
+    menu?.classList.toggle('active');
+  });
   // Mobile menu toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('header ul');
