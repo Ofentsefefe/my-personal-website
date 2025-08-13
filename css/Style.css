@@ -181,15 +181,15 @@ header ul li a.active {
 
 /* Profile Image Styling */
 .imgBox {
-  order: -1; /* Ensures image stays above text */
+  order: -1; /* Ensuring image stays above Introduction text */
   margin-bottom: 20px;
 }
 
 .imgBox img {
   width: 100%;
   max-width: 250px;
-  border-radius: 50%; /* Makes it circular */
-  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   animation: animate 5s linear infinite;
 }
@@ -687,23 +687,23 @@ footer {
 }
 
 .custom-social-icon {
-  width: 55px; /* Adjust size as needed */
-  height: 55px; /* Adjust size as needed */
+  width: 55px; 
+  height: 55px; 
   margin: 0 10px;
   transition: all 0.3s ease;
-  border-radius: 50%; /* Makes icons circular if desired */
-  object-fit: contain; /* Ensures icons maintain aspect ratio */
-  padding: 8px; /* Adds some spacing around the icon */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Maintains your existing shadow */
+  border-radius: 50%; 
+  object-fit: contain; 
+  padding: 8px; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .custom-social-icon:hover {
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  background: #1f71a1; /* Changes background on hover to match your theme */
+  background: #1f71a1;/
 }
 
-/* Remove or comment out any existing .social-links a and .social-links a:hover styles */
+
 
 .social-links a:hover {
   
