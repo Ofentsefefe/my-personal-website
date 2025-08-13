@@ -170,6 +170,63 @@ header ul li a.active {
   animation: animate 5s linear infinite;
   border-radius: 15px;
 }
+/* Home Section Layout */
+.home-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+/* Profile Image Styling */
+.imgBox {
+  order: -1; /* Ensures image stays above text */
+  margin-bottom: 20px;
+}
+
+.imgBox img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 50%; /* Makes it circular */
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  animation: animate 5s linear infinite;
+}
+
+/* Content Styling */
+.content {
+  max-width: 600px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 30px;
+}
+
+/* Responsive Adjustments */
+@media screen and (min-width: 768px) {
+  .home-section .container {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+  
+  .imgBox {
+    order: 0;
+    margin-bottom: 0;
+  }
+  
+  .imgBox img {
+    max-width: 300px;
+  }
+}
+
+/* Keep existing animations */
+@keyframes animate {
+  0%, 100% { transform: translateY(10px); }
+  50% { transform: translateY(30px); }
+}
 /*Writing text animation*/
 .dynamic-text {
   font-size: 1.2em;
