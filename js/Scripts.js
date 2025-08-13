@@ -1,79 +1,141 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const typingElement = document.querySelector('.typing');
-    const textToType = 'student of Information Systems'; // The text you want to appear
-
-    let index = 0;
-    function typeText() {
-        if (index < textToType.length) {
-            typingElement.innerHTML += textToType.charAt(index);
-            index++;
-            setTimeout(typeText, 100); // Adjust typing speed here (100ms)
-        }
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('header ul');
+  
+  menuToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+  });
+  
+  // Close menu when clicking a link
+  const navLinks = document.querySelectorAll('header ul li a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('active');
+    });
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Sticky header on scroll
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.style.background = 'rgba(255, 255, 255, 0.9)';
+      header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+      header.style.background = 'rgba(255, 255, 255, 0.2)';
+      header.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.05)';
     }
-
-    typeText(); // Start the typing effect
+  });
+  
+  // Highlight active menu item on scroll
+  const sections = document.querySelectorAll('.section');
+  
+  window.addEventListener('scroll', function() {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      
+      if (pageYOffset >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+  
+  // Animation on scroll
+  const animateOnScroll = function() {
+    const elements = document.querySelectorAll('.skill-item, .project-card, .timeline-item, .contact-item');
+    
+    elements.forEach(element => {
+      const elementPosition = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementPosition < windowHeight - 100) {
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+      }
+    });
+  };
+  
+  // Set initial state for animated elements
+  document.querySelectorAll('.skill-item, .project-card, .timeline-item, .contact-item').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  });
+  
+  window.addEventListener('scroll', animateOnScroll);
+  animateOnScroll(); // Run once on page load
 });
-function showProjectInfo(projectId) {
-    const projectInfo = document.getElementById(projectId);
+// Typing animation
+const typingElement = document.querySelector('.typing');
+const professions = [
+  "Data Analyst",
+  "Software Developer",
+  "System Analyst",
+  "Application Developer",
+  "Software Enginerr",
+  "Web Designer",
+  "Tech Enthusiast",
+  "Problem Solver"
+];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let isEnd = false;
 
-    // Toggle visibility
-    if (projectInfo.classList.contains('hidden')) {
-        projectInfo.classList.remove('hidden');
-    } else {
-        projectInfo.classList.add('hidden');
+function type() {
+  const currentWord = professions[wordIndex];
+  const currentChar = currentWord.substring(0, charIndex);
+  
+  typingElement.textContent = currentChar;
+  
+  if (!isDeleting && charIndex < currentWord.length) {
+    // Typing
+    charIndex++;
+    setTimeout(type, 100);
+  } else if (isDeleting && charIndex > 0) {
+    // Deleting
+    charIndex--;
+    setTimeout(type, 50);
+  } else {
+    // Change word
+    isDeleting = !isDeleting;
+    if (!isDeleting) {
+      wordIndex = (wordIndex + 1) % professions.length;
     }
+    setTimeout(type, 1000);
+  }
 }
-function showProjectInfo(projectId) {
-    const projectInfo = document.getElementById(projectId);
 
-    // Check if the project info is hidden or visible and toggle the display
-    if (projectInfo.classList.contains('hidden')) {
-        projectInfo.classList.remove('hidden');
-        projectInfo.style.display = 'block'; // Show content
-    } else {
-        projectInfo.classList.add('hidden');
-        projectInfo.style.display = 'none'; // Hide content
-    }
-}
-document.addEventListener("DOMContentLoaded", () => {
-    const sentences = [
-        "an aspiring software developer.",
-        "a system analyst.",
-        "a project manager.",
-        "a creative problem solver.",
-        "a lifelong learner."
-    ];
-
-    const dynamicTextElement = document.getElementById("dynamic-text");
-    let sentenceIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    const typingSpeed = 150;
-    const deletingSpeed = 100;
-    const delayBetweenSentences = 1500;
-
-    function typeSentence() {
-        const currentSentence = sentences[sentenceIndex];
-
-        if (isDeleting) {
-            charIndex--;
-            dynamicTextElement.textContent = currentSentence.substring(0, charIndex);
-        } else {
-            charIndex++;
-            dynamicTextElement.textContent = currentSentence.substring(0, charIndex);
-        }
-
-        let speed = isDeleting ? deletingSpeed : typingSpeed;
-
-        if (!isDeleting && charIndex === currentSentence.length) {
-            speed = delayBetweenSentences;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            sentenceIndex = (sentenceIndex + 1) % sentences.length;
-        }
-
+// Start the typing effect
+setTimeout(type, 1000);
         setTimeout(typeSentence, speed);
     }
 
