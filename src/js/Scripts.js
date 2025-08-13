@@ -98,9 +98,6 @@ const typingElement = document.querySelector('.typing');
 const professions = [
   "Data Analyst",
   "Software Developer",
-  "System Analyst",
-  "Application Developer",
-  "Software Enginerr",
   "Web Designer",
   "Tech Enthusiast",
   "Problem Solver"
@@ -136,8 +133,3 @@ function type() {
 
 // Start the typing effect
 setTimeout(type, 1000);
-        setTimeout(typeSentence, speed);
-    }
-
-    typeSentence();
-});
